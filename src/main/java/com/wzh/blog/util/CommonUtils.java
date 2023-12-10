@@ -88,5 +88,16 @@ public class CommonUtils {
         return result;
     }
 
+    /**
+     * 计算两个日期之间的时间差
+     * @return
+     */
+    public static String getDuration(Date beginDate, Date endDate) {
+        long diffInMillis = endDate.getTime() - beginDate.getTime();
+        long hours = diffInMillis / (60 * 60 * 1000);
+        long minutes = (diffInMillis % (60 * 60 * 1000)) / (60 * 1000);
+        return String.format("%d时%d分", hours, minutes);
+    }
+
 
 }
